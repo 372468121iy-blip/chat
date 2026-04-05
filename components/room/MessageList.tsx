@@ -42,7 +42,7 @@ export function MessageList({ roomId, initialMessages, isMuted }: Props) {
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col min-h-0 flex-1">
       <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4">
         {messages.length === 0 && (
           <p className="text-center text-[#4b5563] text-sm py-10">No messages yet. Say hello! 👋</p>

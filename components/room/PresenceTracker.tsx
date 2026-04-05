@@ -6,58 +6,29 @@ import { useAuth } from '@/components/providers/AuthProvider'
 
 export function PresenceTracker({ roomId }: { roomId: string }) {
   const { user } = useAuth()
-  const trackedRef = useRef(false)
+  const didMount = useRef(false)
 
   useEffect(() => {
-    if (!user || trackedRef.current) return
-    trackedRef.current = true
+    if (!user || didMount.current) return
+    didMount.current = true
 
     const supabase = createClient()
-    const channelName = `presence-room-${roomId}`
 
-    const channel = supabase.channel(channelName, {
-      config: { presence: { key: user.id } },
-    })
-
-    channel
-      .on('presence', { event: 'sync' }, () => {
-        const count = Object.keys(channel.presenceState()).length
-        supabase
-          .from('rooms')
-          .update({ online_count: count })
-          .eq('id', roomId)
-          .then(({ error }) => { if (error) console.error('online_count update error:', error) })
-      })
-      .subscribe(async (status) => {
-        console.log('Presence channel status:', status)
-        if (status === 'SUBSCRIBED') {
-          const trackResult = await channel.track({ user_id: user.id })
-          console.log('Track result:', trackResult)
-        }
-      })
-
-    // Also increment on enter, decrement on leave as fallback
-    supabase.from('rooms').select('online_count').eq('id', roomId).single()
-      .then(({ data }) => {
-        const current = data?.online_count ?? 0
-        supabase.from('rooms').update({ online_count: current + 1 }).eq('id', roomId).then(() => {})
-      })
+    // Atomic increment when entering
+    supabase.rpc('increment_online_count', { room_id: roomId })
 
     const handleLeave = () => {
-      supabase.from('rooms').select('online_count').eq('id', roomId).single()
-        .then(({ data }) => {
-          const current = data?.online_count ?? 1
-          supabase.from('rooms').update({ online_count: Math.max(0, current - 1) }).eq('id', roomId).then(() => {})
-        })
+      supabase.rpc('decrement_online_count', { room_id: roomId })
     }
 
     window.addEventListener('beforeunload', handleLeave)
+    window.addEventListener('pagehide', handleLeave)
 
     return () => {
       window.removeEventListener('beforeunload', handleLeave)
+      window.removeEventListener('pagehide', handleLeave)
       handleLeave()
-      supabase.removeChannel(channel)
-      trackedRef.current = false
+      didMount.current = false
     }
   }, [user, roomId])
 
