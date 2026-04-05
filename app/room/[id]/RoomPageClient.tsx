@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { MessageList } from '@/components/room/MessageList'
 import { OnlineSidebar } from '@/components/room/OnlineSidebar'
-import { PresenceTracker } from '@/components/room/PresenceTracker'
 import type { Message, Room, RoomMember } from '@/types'
 
 type Props = {
@@ -18,6 +17,7 @@ type Props = {
 export function RoomPageClient({ room, initialMessages, initialMembers, currentUserRole, isMuted }: Props) {
   const [members] = useState(initialMembers)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [onlineCount, setOnlineCount] = useState(0)
 
   return (
     <div className="flex h-[calc(100vh-56px)] flex-col">
@@ -30,7 +30,7 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-[#10b981] animate-pulse" />
-            <span className="text-sm text-[#10b981] font-medium">{room.online_count}</span>
+            <span className="text-sm text-[#10b981] font-medium">{onlineCount}</span>
           </div>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -43,7 +43,12 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
 
       <div className="flex flex-1 overflow-hidden">
         <div className="flex-1 flex flex-col overflow-hidden">
-          <MessageList roomId={room.id} initialMessages={initialMessages} isMuted={isMuted} />
+          <MessageList
+            roomId={room.id}
+            initialMessages={initialMessages}
+            isMuted={isMuted}
+            onOnlineCountChange={setOnlineCount}
+          />
         </div>
         <div className={`
           ${sidebarOpen ? 'flex' : 'hidden'} lg:flex
@@ -59,8 +64,6 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
           />
         </div>
       </div>
-
-      <PresenceTracker roomId={room.id} />
     </div>
   )
 }
