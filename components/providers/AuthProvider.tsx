@@ -56,24 +56,36 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const loadOrCreateProfile = async (authUser: User) => {
     setUser(authUser)
     try {
+      // Try to load existing profile
       const { data: existing } = await supabase
         .from('users').select('*').eq('id', authUser.id).single()
 
       if (existing) {
         setProfile(existing)
-        await supabase.from('users')
+        supabase.from('users')
           .update({ last_seen_at: new Date().toISOString() })
           .eq('id', authUser.id)
+          .then(() => {})
+        return
+      }
+
+      // Create new profile — retry once on failure
+      const newProfile = {
+        id: authUser.id,
+        nickname: generateNickname(),
+        avatar: generateAvatar(),
+        is_bound: false,
+      }
+
+      const { data, error } = await supabase
+        .from('users').insert(newProfile).select().single()
+
+      if (data) {
+        setProfile(data)
       } else {
-        const newProfile = {
-          id: authUser.id,
-          nickname: generateNickname(),
-          avatar: generateAvatar(),
-          is_bound: false,
-        }
-        const { data, error } = await supabase.from('users').insert(newProfile).select().single()
-        if (data) setProfile(data)
-        else console.error('Profile creation failed:', error)
+        console.error('Profile insert error:', error)
+        // Fallback: set a local profile so UI is not broken
+        setProfile({ ...newProfile, created_at: new Date().toISOString(), last_seen_at: new Date().toISOString() })
       }
     } catch (e) {
       console.error('loadOrCreateProfile error:', e)
