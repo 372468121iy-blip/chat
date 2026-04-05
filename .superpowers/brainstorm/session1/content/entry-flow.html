@@ -1,0 +1,75 @@
+<h2>点击聊天室后，用户怎么进入？</h2>
+<p class="subtitle">这决定了用户的第一步体验，从首页点击一个聊天室卡片后……</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="instant" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:16px;min-height:170px;border-radius:8px 8px 0 0;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+      <div style="text-align:center;margin-bottom:10px;">
+        <div style="color:#a78bfa;font-size:11px;letter-spacing:1px;">👆 点击"深夜失眠"房间</div>
+        <div style="color:#4b5563;font-size:10px;margin-top:4px;">↓ 立刻进入</div>
+      </div>
+      <div style="background:#1a1a2e;border-radius:8px;padding:14px;width:100%;border:1px solid #2d2d4e;">
+        <div style="background:#16213e;border-radius:6px;padding:8px 12px;margin-bottom:8px;">
+          <span style="color:#6b7280;font-size:10px;">匿名用户#7382：</span>
+          <span style="color:#e2e8f0;font-size:10px;"> 睡不着，你们都在聊什么</span>
+        </div>
+        <div style="background:#16213e;border-radius:6px;padding:8px 12px;margin-bottom:8px;">
+          <span style="color:#a78bfa;font-size:10px;">夜猫子#2941：</span>
+          <span style="color:#e2e8f0;font-size:10px;"> 刷手机刷到天亮那种</span>
+        </div>
+        <div style="background:#312e81;border-radius:6px;padding:8px 12px;">
+          <span style="color:#c4b5fd;font-size:10px;">你（匿名用户#5510）：</span>
+          <span style="color:#e2e8f0;font-size:10px;"> 进来了</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 直接进入，自动分配随机名</h3>
+      <p>零摩擦。系统自动给你一个"匿名用户#XXXX"，点击即聊。速度最快，最简单。每次刷新页面可能变换身份。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="nickname" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:16px;min-height:170px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;">
+      <div style="background:#1a1a2e;border-radius:12px;padding:20px;width:100%;border:1px solid #4c1d95;text-align:center;">
+        <div style="color:#a78bfa;font-size:13px;font-weight:700;margin-bottom:4px;">🌙 深夜失眠</div>
+        <div style="color:#6b7280;font-size:10px;margin-bottom:14px;">64 人在线</div>
+        <div style="color:#9ca3af;font-size:10px;margin-bottom:6px;text-align:left;">起个临时昵称（可选）</div>
+        <div style="background:#0f0f1a;border:1px solid #4b5563;border-radius:6px;padding:8px 12px;text-align:left;margin-bottom:12px;">
+          <span style="color:#a78bfa;font-size:11px;">夜猫子</span>
+          <span style="color:#4b5563;font-size:11px;animation:blink 1s step-end infinite;">|</span>
+        </div>
+        <div style="font-size:9px;color:#4b5563;margin-bottom:12px;">不填则随机分配，无需注册，关闭即消失</div>
+        <div style="background:#7c3aed;color:#fff;border-radius:6px;padding:8px;font-size:11px;font-weight:700;cursor:pointer;">进入聊天室 →</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 弹出小窗口，可选填昵称</h3>
+      <p>点击后弹出一个小框，可以自己起个临时昵称（也可不填直接进）。有一点点个性化，但不需要注册，关闭页面就消失。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="avatar" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:16px;min-height:170px;border-radius:8px 8px 0 0;display:flex;align-items:center;justify-content:center;">
+      <div style="background:#1a1a2e;border-radius:12px;padding:16px;width:100%;border:1px solid #4c1d95;">
+        <div style="color:#a78bfa;font-size:11px;font-weight:700;text-align:center;margin-bottom:12px;">选择你的匿名形象</div>
+        <div style="display:flex;justify-content:center;gap:10px;margin-bottom:12px;">
+          <div style="background:#312e81;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;border:2px solid #7c3aed;">🦊</div>
+          <div style="background:#1e3a5f;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;">🐼</div>
+          <div style="background:#1e3a5f;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;">🐉</div>
+          <div style="background:#1e3a5f;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;">🌙</div>
+          <div style="background:#1e3a5f;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;">⚡</div>
+        </div>
+        <div style="background:#7c3aed;color:#fff;border-radius:6px;padding:8px;font-size:11px;font-weight:700;text-align:center;">以🦊进入聊天室 →</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 选一个匿名头像表情</h3>
+      <p>点击后让用户从几个 emoji 里挑一个作为头像，自动生成配套名字（如"神秘狐狸"）。增加趣味感，同时保持完全匿名。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center;">点击选择进入方式，或在对话框里说你的想法</p>

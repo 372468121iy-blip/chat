@@ -1,0 +1,142 @@
+<h2>首页聊天室怎么排列？</h2>
+<p class="subtitle">三种不同的卡片布局方式，暗黑风格预览</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="grid" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:14px;min-height:160px;border-radius:8px 8px 0 0;">
+      <!-- Grid: 3 columns -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#a78bfa;font-size:10px;font-weight:700;">💬 闲聊</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">随便聊</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 128人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#f472b6;font-size:10px;font-weight:700;">🎮 游戏</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">电竞手游</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 87人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#34d399;font-size:10px;font-weight:700;">🌙 深夜</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">失眠陪伴</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 64人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#fb923c;font-size:10px;font-weight:700;">🎵 音乐</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">分享歌单</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 52人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#60a5fa;font-size:10px;font-weight:700;">💻 技术</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">编程交流</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 41人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px;border:1px solid #2d2d4e;">
+          <div style="color:#f9a8d4;font-size:10px;font-weight:700;">💕 情感</div>
+          <div style="color:#4b5563;font-size:9px;margin-top:3px;">说说心里话</div>
+          <div style="color:#10b981;font-size:9px;margin-top:5px;">● 38人</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 方格网格布局</h3>
+      <p>多列网格，信息密集，一屏能看到很多聊天室。类似应用商店的排列感。适合聊天室数量多的情况。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="list" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:14px;min-height:160px;border-radius:8px 8px 0 0;">
+      <!-- List layout -->
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px 14px;border:1px solid #2d2d4e;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="color:#a78bfa;font-size:11px;font-weight:700;">💬 闲聊广场 <span style="background:#7c3aed;color:#fff;font-size:9px;padding:1px 5px;border-radius:10px;margin-left:4px;">🔥热门</span></div>
+            <div style="color:#4b5563;font-size:10px;margin-top:2px;">随便聊聊，什么都行，欢迎所有人</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+            <div style="color:#10b981;font-size:10px;">● 128人</div>
+          </div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px 14px;border:1px solid #2d2d4e;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="color:#f472b6;font-size:11px;font-weight:700;">🎮 游戏玩家</div>
+            <div style="color:#4b5563;font-size:10px;margin-top:2px;">电竞、手游、主机游戏讨论</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+            <div style="color:#10b981;font-size:10px;">● 87人</div>
+          </div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px 14px;border:1px solid #2d2d4e;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="color:#34d399;font-size:11px;font-weight:700;">🌙 深夜失眠</div>
+            <div style="color:#4b5563;font-size:10px;margin-top:2px;">睡不着的人在这里相遇</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+            <div style="color:#10b981;font-size:10px;">● 64人</div>
+          </div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:10px 14px;border:1px solid #2d2d4e;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <div style="color:#fb923c;font-size:11px;font-weight:700;">🎵 音乐分享</div>
+            <div style="color:#4b5563;font-size:10px;margin-top:2px;">推歌、歌单、音乐心情</div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;margin-left:10px;">
+            <div style="color:#10b981;font-size:10px;">● 52人</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 宽条列表布局</h3>
+      <p>横向宽条，能显示更完整的房间简介。类似 Reddit 或论坛的帖子列表感。一眼能看清每个房间的介绍。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="featured" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:14px;min-height:160px;border-radius:8px 8px 0 0;">
+      <!-- Featured: 1 big + small grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <!-- Big featured card spanning 2 rows conceptually -->
+        <div style="background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:8px;padding:12px;border:1px solid #4c1d95;grid-row:span 2;">
+          <div style="color:#c4b5fd;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;">🔥 最热聊天室</div>
+          <div style="color:#a78bfa;font-size:12px;font-weight:800;margin-top:6px;">💬 闲聊广场</div>
+          <div style="color:#6b7280;font-size:10px;margin-top:4px;line-height:1.4;">随便聊聊，什么都行，欢迎所有人加入</div>
+          <div style="margin-top:10px;">
+            <span style="color:#10b981;font-size:10px;">● 128 人在线</span>
+          </div>
+        </div>
+        <!-- Small cards -->
+        <div style="background:#1a1a2e;border-radius:6px;padding:9px;border:1px solid #2d2d4e;">
+          <div style="color:#f472b6;font-size:10px;font-weight:700;">🎮 游戏</div>
+          <div style="color:#10b981;font-size:9px;margin-top:4px;">● 87人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:9px;border:1px solid #2d2d4e;">
+          <div style="color:#34d399;font-size:10px;font-weight:700;">🌙 深夜</div>
+          <div style="color:#10b981;font-size:9px;margin-top:4px;">● 64人</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px;">
+        <div style="background:#1a1a2e;border-radius:6px;padding:9px;border:1px solid #2d2d4e;">
+          <div style="color:#fb923c;font-size:10px;font-weight:700;">🎵 音乐</div>
+          <div style="color:#10b981;font-size:9px;margin-top:4px;">● 52人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:9px;border:1px solid #2d2d4e;">
+          <div style="color:#60a5fa;font-size:10px;font-weight:700;">💻 技术</div>
+          <div style="color:#10b981;font-size:9px;margin-top:4px;">● 41人</div>
+        </div>
+        <div style="background:#1a1a2e;border-radius:6px;padding:9px;border:1px solid #2d2d4e;">
+          <div style="color:#f9a8d4;font-size:10px;font-weight:700;">💕 情感</div>
+          <div style="color:#10b981;font-size:9px;margin-top:4px;">● 38人</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 精选+网格混合</h3>
+      <p>最热的房间大卡片展示，其余用小网格排列。有层次感和视觉重点，让热门房间更突出。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center;">点击选择布局，或在对话框里说你的想法</p>

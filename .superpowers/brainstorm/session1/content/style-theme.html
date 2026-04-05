@@ -1,0 +1,83 @@
+<h2>你想要什么风格的聊天网站？</h2>
+<p class="subtitle">选择一个整体视觉风格方向，这将决定网站的颜色、字体和氛围</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="dark" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0f0f1a;padding:16px;min-height:140px;border-radius:8px 8px 0 0;">
+      <div style="background:#1a1a2e;border-radius:8px;padding:12px;margin-bottom:8px;">
+        <div style="color:#a78bfa;font-size:12px;font-weight:700;letter-spacing:1px;">💬 深夜闲聊</div>
+        <div style="color:#6b7280;font-size:11px;margin-top:4px;">随便聊聊，什么都行</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#10b981;font-size:10px;">● 128 人在线</span>
+          <span style="color:#4b5563;font-size:10px;">活跃</span>
+        </div>
+      </div>
+      <div style="background:#1a1a2e;border-radius:8px;padding:12px;">
+        <div style="color:#f472b6;font-size:12px;font-weight:700;">🎮 游戏讨论</div>
+        <div style="color:#6b7280;font-size:11px;margin-top:4px;">电竞、手游、主机游戏</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#10b981;font-size:10px;">● 87 人在线</span>
+          <span style="color:#4b5563;font-size:10px;">热门</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>暗黑极客风</h3>
+      <p>深色背景 + 霓虹紫/绿色调。科技感强，适合夜间使用，年轻人喜欢的赛博朋克氛围。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="light" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8fafc;padding:16px;min-height:140px;border-radius:8px 8px 0 0;border:1px solid #e2e8f0;">
+      <div style="background:#ffffff;border-radius:8px;padding:12px;margin-bottom:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <div style="color:#3b82f6;font-size:12px;font-weight:700;">💬 闲聊广场</div>
+        <div style="color:#94a3b8;font-size:11px;margin-top:4px;">随便聊聊，什么都行</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#22c55e;font-size:10px;">● 128 人在线</span>
+          <span style="color:#cbd5e1;font-size:10px;">活跃</span>
+        </div>
+      </div>
+      <div style="background:#ffffff;border-radius:8px;padding:12px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <div style="color:#8b5cf6;font-size:12px;font-weight:700;">🎨 艺术创作</div>
+        <div style="color:#94a3b8;font-size:11px;margin-top:4px;">分享你的画作与灵感</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#22c55e;font-size:10px;">● 65 人在线</span>
+          <span style="color:#cbd5e1;font-size:10px;">热门</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>简洁明亮风</h3>
+      <p>白色背景 + 蓝/紫色调。干净清爽，适合所有年龄层，接近 Slack / Discord 的明亮模式风格。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="colorful" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:16px;min-height:140px;border-radius:8px 8px 0 0;">
+      <div style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:8px;padding:12px;margin-bottom:8px;border:1px solid rgba(255,255,255,0.2);">
+        <div style="color:#ffffff;font-size:12px;font-weight:700;">💬 随便聊</div>
+        <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:4px;">什么都能聊，包容万象</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#a7f3d0;font-size:10px;">● 128 人在线</span>
+          <span style="color:rgba(255,255,255,0.5);font-size:10px;">活跃</span>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:8px;padding:12px;border:1px solid rgba(255,255,255,0.2);">
+        <div style="color:#fde68a;font-size:12px;font-weight:700;">🌟 情感树洞</div>
+        <div style="color:rgba(255,255,255,0.7);font-size:11px;margin-top:4px;">说说心里话</div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;">
+          <span style="color:#a7f3d0;font-size:10px;">● 92 人在线</span>
+          <span style="color:rgba(255,255,255,0.5);font-size:10px;">热门</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>渐变毛玻璃风</h3>
+      <p>紫色渐变背景 + 半透明毛玻璃卡片。时尚感强，高颜值，像 iOS 风格，视觉冲击力强。</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center;">点击卡片选择你喜欢的风格，或在对话框里告诉我你的想法</p>

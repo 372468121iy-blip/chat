@@ -1,0 +1,69 @@
+<h2>技术方案选哪个？</h2>
+<p class="subtitle">三种方案都能实现你的需求，区别在于复杂度和成本</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>⭐ 推荐：Next.js + Supabase（全免费）</h3>
+      <p>
+        <strong style="color:#a78bfa;">前端：</strong> Next.js（React框架）部署在 Vercel<br>
+        <strong style="color:#a78bfa;">数据库：</strong> Supabase（PostgreSQL，存消息/用户/房间）<br>
+        <strong style="color:#a78bfa;">实时聊天：</strong> Supabase Realtime（内置WebSocket，天生适合聊天）<br>
+        <strong style="color:#a78bfa;">用户系统：</strong> Supabase 匿名登录 + 可绑定邮箱/手机<br>
+        <strong style="color:#a78bfa;">费用：</strong> 完全免费（Vercel免费档 + Supabase免费档）<br><br>
+        <span style="color:#10b981;">✅ Vercel + Supabase + GitHub 你全都有，开箱即用</span><br>
+        <span style="color:#10b981;">✅ Supabase 专门为这类场景设计，文档完善</span><br>
+        <span style="color:#10b981;">✅ 一套工具完成所有功能，无需额外服务</span><br>
+        <span style="color:#6b7280;">⚠ 需要学习一点点 React/Next.js 基础概念</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Firebase + Vercel（Google全家桶）</h3>
+      <p>
+        <strong style="color:#a78bfa;">前端：</strong> Next.js 部署在 Vercel<br>
+        <strong style="color:#a78bfa;">数据库：</strong> Firebase Firestore（NoSQL实时数据库）<br>
+        <strong style="color:#a78bfa;">实时聊天：</strong> Firestore 自带实时同步<br>
+        <strong style="color:#a78bfa;">用户系统：</strong> Firebase 匿名登录 + 绑定邮箱/手机<br>
+        <strong style="color:#a78bfa;">费用：</strong> 免费额度够用，超出后按量计费<br><br>
+        <span style="color:#10b981;">✅ Firebase 实时性非常强，适合高并发聊天</span><br>
+        <span style="color:#10b981;">✅ Google 服务稳定，匿名登录功能完善</span><br>
+        <span style="color:#f87171;">❌ 你提到的是 Google Stitch（已停服），需换成 Firebase</span><br>
+        <span style="color:#6b7280;">⚠ 费用规则复杂，流量大时可能产生费用</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Next.js + PlanetScale + Pusher（三件套）</h3>
+      <p>
+        <strong style="color:#a78bfa;">前端：</strong> Next.js 部署在 Vercel<br>
+        <strong style="color:#a78bfa;">数据库：</strong> PlanetScale（MySQL云数据库）<br>
+        <strong style="color:#a78bfa;">实时聊天：</strong> Pusher Channels（专业WebSocket服务）<br>
+        <strong style="color:#a78bfa;">用户系统：</strong> 自行实现匿名令牌<br>
+        <strong style="color:#a78bfa;">费用：</strong> 三个服务各有免费额度<br><br>
+        <span style="color:#10b981;">✅ Pusher 是成熟的实时通信专业服务</span><br>
+        <span style="color:#f87171;">❌ 需要管理三个独立服务，更复杂</span><br>
+        <span style="color:#f87171;">❌ PlanetScale 已取消永久免费档</span><br>
+        <span style="color:#6b7280;">⚠ 对于新手来说配置难度较高</span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:20px;background:#1a1a2e;border:1px solid #312e81;border-radius:8px;padding:16px;">
+  <div style="color:#a78bfa;font-size:12px;font-weight:700;margin-bottom:8px;">💡 我的建议</div>
+  <div style="color:#9ca3af;font-size:11px;line-height:1.6;">
+    方案A（Next.js + Supabase）是最适合这个项目的选择。你已经有了 Vercel + Supabase + GitHub，三者配合完美，Supabase 的实时功能天生为聊天设计，免费额度对于初期网站完全够用。整个项目只需要学一套工具，不用在多个平台之间来回切换。
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:16px;text-align:center;">点击选择你倾向的方案，或在对话框里提问</p>
