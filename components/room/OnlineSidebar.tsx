@@ -70,9 +70,9 @@ function MemberRow({ member, isCurrentUser, canModerate, isCreator, onMute, onKi
   const roleBadge = member.role === 'creator' ? '👑' : member.role === 'admin' ? '🛡️' : null
 
   return (
-    <div className="relative flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-[#1a1a2e] group">
+    <div className="relative flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-[#2D2D44] group">
       <span className="text-lg">{member.users?.avatar ?? '👤'}</span>
-      <span className={`flex-1 text-sm truncate ${isCurrentUser ? 'text-[#a78bfa]' : 'text-[#9ca3af]'}`}>
+      <span className={`flex-1 text-sm truncate ${isCurrentUser ? 'text-[#00F5FF]' : 'text-[#9ca3af]'}`}>
         {member.users?.nickname ?? 'Unknown'} {isCurrentUser && '(you)'}
       </span>
       {roleBadge && <span className="text-xs">{roleBadge}</span>}
@@ -83,24 +83,24 @@ function MemberRow({ member, isCurrentUser, canModerate, isCreator, onMute, onKi
         </button>
       )}
       {menuOpen && (
-        <div className="absolute right-0 top-8 z-10 w-44 rounded-xl border border-[#2d2d4e] bg-[#1a1a2e] shadow-xl overflow-hidden">
+        <div className="absolute right-0 top-8 z-10 w-44 rounded-xl border border-[#3a3a5c] bg-[#2D2D44] shadow-xl overflow-hidden">
           {[
             { label: '🔇 Mute 5 min', action: () => onMute(5 * 60 * 1000) },
             { label: '🔇 Mute 1 hour', action: () => onMute(60 * 60 * 1000) },
             { label: '🔇 Mute forever', action: () => onMute(null) },
           ].map(item => (
             <button key={item.label} onClick={() => { item.action(); setMenuOpen(false) }}
-              className="w-full px-4 py-2 text-left text-sm text-[#9ca3af] hover:bg-[#2d2d4e]">
+              className="w-full px-4 py-2 text-left text-sm text-[#9ca3af] hover:bg-[#3a3a5c]">
               {item.label}
             </button>
           ))}
           <button onClick={() => { onKick(); setMenuOpen(false) }}
-            className="w-full px-4 py-2 text-left text-sm text-red-400 hover:bg-[#2d2d4e]">
+            className="w-full px-4 py-2 text-left text-sm text-red-400 hover:bg-[#3a3a5c]">
             🚫 Kick
           </button>
           {isCreator && member.role === 'member' && (
             <button onClick={() => { onPromote(); setMenuOpen(false) }}
-              className="w-full px-4 py-2 text-left text-sm text-[#a78bfa] hover:bg-[#2d2d4e]">
+              className="w-full px-4 py-2 text-left text-sm text-[#00F5FF] hover:bg-[#3a3a5c]">
               🛡️ Make Admin
             </button>
           )}

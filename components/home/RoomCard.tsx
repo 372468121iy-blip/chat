@@ -8,14 +8,14 @@ export function RoomCard({ room }: { room: Room }) {
 
   return (
     <Link href={`/room/${room.id}`} className="block group">
-      <div className="flex items-center justify-between rounded-xl border border-[#2d2d4e] bg-[#1a1a2e] px-5 py-4 transition-all hover:border-[#a78bfa]/50 hover:bg-[#1e1e35]">
+      <div className="flex items-center justify-between rounded-xl border border-[#3a3a5c] bg-[#2D2D44] px-5 py-4 transition-all hover:border-[#00F5FF]/50 hover:bg-[#35355a]">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-2">
-            <h2 className="font-semibold text-[#e2e8f0] truncate group-hover:text-[#c4b5fd] transition-colors">
+            <h2 className="font-semibold text-[#e2e8f0] truncate group-hover:text-[#00F5FF] transition-colors">
               {room.name}
             </h2>
             {isHot && (
-              <span className="flex-shrink-0 rounded-full bg-[#7c3aed]/30 border border-[#7c3aed]/50 px-2 py-0.5 text-[10px] font-medium text-[#c4b5fd]">
+              <span className="flex-shrink-0 rounded-full bg-[#7C4DFF]/30 border border-[#7C4DFF]/50 px-2 py-0.5 text-[10px] font-medium text-[#00F5FF]">
                 🔥 Hot
               </span>
             )}

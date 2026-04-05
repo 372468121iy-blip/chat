@@ -21,8 +21,8 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
 
   return (
     <div className="flex h-[calc(100vh-56px)] flex-col">
-      <div className="flex items-center gap-3 border-b border-[#2d2d4e] bg-[#0f0f1a]/90 px-4 py-3 backdrop-blur-sm">
-        <Link href="/" className="text-[#6b7280] hover:text-[#a78bfa] transition-colors text-lg">←</Link>
+      <div className="flex items-center gap-3 border-b border-[#3a3a5c] bg-[#0A0A0F]/90 px-4 py-3 backdrop-blur-sm">
+        <Link href="/" className="text-[#6b7280] hover:text-[#00F5FF] transition-colors text-lg">←</Link>
         <div className="flex-1 min-w-0">
           <h1 className="font-semibold text-[#e2e8f0] truncate">{room.name}</h1>
           {room.description && <p className="text-xs text-[#6b7280] truncate">{room.description}</p>}
@@ -34,7 +34,7 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
           </div>
           <button
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="flex items-center justify-center w-8 h-8 rounded-lg text-[#6b7280] hover:text-[#a78bfa] hover:bg-[#1a1a2e] transition-colors"
+            className="flex items-center justify-center w-8 h-8 rounded-lg text-[#6b7280] hover:text-[#00F5FF] hover:bg-[#2D2D44] transition-colors"
           >
             👥
           </button>
@@ -52,7 +52,7 @@ export function RoomPageClient({ room, initialMessages, initialMembers, currentU
         </div>
         <div className={`
           ${sidebarOpen ? 'flex' : 'hidden'} lg:flex
-          w-60 flex-shrink-0 flex-col border-l border-[#2d2d4e] bg-[#0f0f1a]
+          w-60 flex-shrink-0 flex-col border-l border-[#3a3a5c] bg-[#0A0A0F]
           fixed right-0 top-14 bottom-0 z-40
           lg:relative lg:top-auto lg:bottom-auto lg:z-auto
         `}>

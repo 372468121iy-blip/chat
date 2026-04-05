@@ -20,7 +20,6 @@ export function CreateRoomModal({ onClose }: Props) {
     setError('')
 
     try {
-      // Ensure user profile exists before creating room (guards against race condition)
       const { data: existingProfile } = await supabase
         .from('users').select('id').eq('id', user.id).single()
 
@@ -59,8 +58,8 @@ export function CreateRoomModal({ onClose }: Props) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-md rounded-2xl border border-[#2d2d4e] bg-[#1a1a2e] p-6">
-        <h2 className="text-lg font-bold text-[#c4b5fd] mb-5">Create a Room</h2>
+      <div className="w-full max-w-md rounded-2xl border border-[#3a3a5c] bg-[#2D2D44] p-6">
+        <h2 className="text-lg font-bold text-[#00F5FF] mb-5">Create a Room</h2>
 
         <label className="block text-xs font-medium text-[#9ca3af] uppercase tracking-wide mb-1">
           Room Name <span className="text-[#f472b6]">*</span>
@@ -71,7 +70,7 @@ export function CreateRoomModal({ onClose }: Props) {
           value={name}
           onChange={e => setName(e.target.value)}
           placeholder="e.g. Late Night Insomnia"
-          className="w-full rounded-lg bg-[#0f0f1a] border border-[#2d2d4e] px-3 py-2.5 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#a78bfa] mb-4"
+          className="w-full rounded-lg bg-[#0A0A0F] border border-[#3a3a5c] px-3 py-2.5 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#00F5FF] mb-4"
         />
 
         <label className="block text-xs font-medium text-[#9ca3af] uppercase tracking-wide mb-1">
@@ -83,18 +82,18 @@ export function CreateRoomModal({ onClose }: Props) {
           value={description}
           onChange={e => setDescription(e.target.value)}
           placeholder="What's this room about?"
-          className="w-full rounded-lg bg-[#0f0f1a] border border-[#2d2d4e] px-3 py-2.5 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#a78bfa] mb-5"
+          className="w-full rounded-lg bg-[#0A0A0F] border border-[#3a3a5c] px-3 py-2.5 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#00F5FF] mb-5"
         />
 
         {error && <p className="text-xs text-red-400 mb-3">{error}</p>}
 
         <div className="flex gap-3">
           <button onClick={onClose}
-            className="flex-1 rounded-lg border border-[#2d2d4e] py-2.5 text-sm text-[#6b7280] hover:text-[#9ca3af] transition-colors">
+            className="flex-1 rounded-lg border border-[#3a3a5c] py-2.5 text-sm text-[#6b7280] hover:text-[#9ca3af] transition-colors">
             Cancel
           </button>
           <button onClick={handleCreate} disabled={!name.trim() || loading}
-            className="flex-1 rounded-lg bg-[#7c3aed] py-2.5 text-sm font-semibold text-white hover:bg-[#6d28d9] disabled:opacity-40 transition-colors">
+            className="flex-1 rounded-lg bg-[#7C4DFF] py-2.5 text-sm font-semibold text-white hover:bg-[#6B3FE0] disabled:opacity-40 transition-colors">
             {loading ? 'Creating…' : 'Create Room'}
           </button>
         </div>

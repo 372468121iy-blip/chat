@@ -41,11 +41,11 @@ export function RoomList({ initialRooms }: { initialRooms: Room[] }) {
           placeholder="Search rooms…"
           value={search}
           onChange={e => setSearch(e.target.value)}
-          className="flex-1 rounded-lg bg-[#1a1a2e] border border-[#2d2d4e] px-3 py-2 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#a78bfa] hidden sm:block"
+          className="flex-1 rounded-lg bg-[#2D2D44] border border-[#3a3a5c] px-3 py-2 text-sm text-[#e2e8f0] placeholder-[#4b5563] outline-none focus:border-[#00F5FF] hidden sm:block"
         />
         <button
           onClick={() => setShowCreate(true)}
-          className="ml-auto flex items-center gap-2 rounded-lg bg-[#7c3aed] px-4 py-2 text-sm font-semibold text-white hover:bg-[#6d28d9] transition-colors"
+          className="ml-auto flex items-center gap-2 rounded-lg bg-[#7C4DFF] px-4 py-2 text-sm font-semibold text-white hover:bg-[#6B3FE0] transition-colors"
         >
           <span className="text-base leading-none">＋</span>
           <span className="hidden sm:inline">Create Room</span>
@@ -65,7 +65,7 @@ export function RoomList({ initialRooms }: { initialRooms: Room[] }) {
 
       <button
         onClick={() => setShowCreate(true)}
-        className="fixed bottom-6 right-6 sm:hidden h-14 w-14 rounded-full bg-[#7c3aed] text-white text-2xl shadow-lg shadow-[#7c3aed]/30 hover:bg-[#6d28d9] transition-colors flex items-center justify-center"
+        className="fixed bottom-6 right-6 sm:hidden h-14 w-14 rounded-full bg-[#7C4DFF] text-white text-2xl shadow-lg shadow-[#7C4DFF]/30 hover:bg-[#6B3FE0] transition-colors flex items-center justify-center"
         aria-label="Create room"
       >
         ＋

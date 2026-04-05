@@ -17,8 +17,8 @@ export function MessageBubble({ message, isOwn }: Props) {
         </div>
         <div className={`rounded-2xl px-4 py-2 text-sm leading-relaxed break-words ${
           isOwn
-            ? 'bg-[#7c3aed] text-white rounded-tr-sm'
-            : 'bg-[#1a1a2e] border border-[#2d2d4e] text-[#e2e8f0] rounded-tl-sm'
+            ? 'bg-[#7C4DFF] text-white rounded-tr-sm'
+            : 'bg-[#2D2D44] border border-[#3a3a5c] text-[#e2e8f0] rounded-tl-sm'
         }`}>
           {message.content}
         </div>
