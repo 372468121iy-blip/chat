@@ -19,20 +19,42 @@ export function CreateRoomModal({ onClose }: Props) {
     setLoading(true)
     setError('')
 
-    const { data, error: err } = await supabase
-      .from('rooms')
-      .insert({ name: name.trim(), description: description.trim(), creator_id: user.id })
-      .select()
-      .single()
+    try {
+      // Ensure user profile exists before creating room (guards against race condition)
+      const { data: existingProfile } = await supabase
+        .from('users').select('id').eq('id', user.id).single()
 
-    if (err) { setError(err.message); setLoading(false); return }
+      if (!existingProfile) {
+        const { generateNickname, generateAvatar } = await import('@/lib/utils/generateAnon')
+        const { error: profileErr } = await supabase.from('users').insert({
+          id: user.id,
+          nickname: generateNickname(),
+          avatar: generateAvatar(),
+          is_bound: false,
+        })
+        if (profileErr) { setError('Profile error: ' + profileErr.message); setLoading(false); return }
+      }
 
-    await supabase.from('room_members').insert({
-      room_id: data.id, user_id: user.id, role: 'creator'
-    })
+      const { data, error: roomErr } = await supabase
+        .from('rooms')
+        .insert({ name: name.trim(), description: description.trim(), creator_id: user.id })
+        .select()
+        .single()
 
-    setLoading(false)
-    onClose()
+      if (roomErr) { setError('Room error: ' + roomErr.message); setLoading(false); return }
+
+      const { error: memberErr } = await supabase.from('room_members').insert({
+        room_id: data.id, user_id: user.id, role: 'creator'
+      })
+
+      if (memberErr) { setError('Member error: ' + memberErr.message); setLoading(false); return }
+
+      setLoading(false)
+      onClose()
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : 'Unknown error')
+      setLoading(false)
+    }
   }
 
   return (
